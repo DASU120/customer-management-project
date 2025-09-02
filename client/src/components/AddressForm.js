@@ -29,7 +29,7 @@ function AddressForm({ customerId, address, onAddressAdded, onCancel }) {
       [name]: value
     }));
     
-    // Clear error when user starts typing
+    
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -71,10 +71,10 @@ function AddressForm({ customerId, address, onAddressAdded, onCancel }) {
       try {
         if (address) {
           // Update existing address
-          await axios.put(`http://localhost:5000/api/addresses/${address.id}`, formData);
+          await axios.put(`https://customer-management-app-qqqn.onrender.com/api/addresses/${address.id}`, formData);
         } else {
           // Create new address
-          await axios.post(`http://localhost:5000/api/customers/${customerId}/addresses`, formData);
+          await axios.post(`https://customer-management-app-qqqn.onrender.com/api/customers/${customerId}/addresses`, formData);
         }
         onAddressAdded();
       } catch (err) {

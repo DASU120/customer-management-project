@@ -8,7 +8,7 @@ function AddressList({ addresses, onAddressUpdated, onAddressDeleted }) {
   const handleDelete = async (addressId) => {
     if (window.confirm('Are you sure you want to delete this address?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/addresses/${addressId}`);
+        await axios.delete(`https://customer-management-app-qqqn.onrender.com/api/addresses/${addressId}`);
         onAddressDeleted();
       } catch (err) {
         console.error('Error deleting address:', err);

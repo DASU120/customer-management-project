@@ -13,7 +13,7 @@ function CustomerFormPage() {
     if (id) {
       const fetchCustomer = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/customers/${id}`);
+          const response = await axios.get(`https://customer-management-app-qqqn.onrender.com/api/customers/${id}`);
           setInitialData(response.data.data);
         } catch (err) {
           console.error('Error fetching customer:', err);
@@ -31,10 +31,10 @@ function CustomerFormPage() {
     try {
       if (id) {
         // Update existing customer
-        await axios.put(`http://localhost:5000/api/customers/${id}`, customerData);
+        await axios.put(`https://customer-management-app-qqqn.onrender.com/api/customers/${id}`, customerData);
       } else {
         // Create new customer
-        await axios.post('http://localhost:5000/api/customers', customerData);
+        await axios.post('https://customer-management-app-qqqn.onrender.com/api/customers', customerData);
       }
       navigate('/customers');
     } catch (err) {

@@ -15,7 +15,7 @@ function CustomerListPage() {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/customers`, {
+      const response = await axios.get(`https://customer-management-app-qqqn.onrender.com/api/customers`, {
         params: {
           search: searchTerm,
           page: currentPage,
